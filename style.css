@@ -29,6 +29,7 @@ body::after {
     width: 80%;
     height: 80%;
     border-radius: 20px;
+    overflow: hidden;
 }
 
 nav {
@@ -64,4 +65,72 @@ nav ul li a {
 
 nav ul li a:hover {
     color: rgb(236, 1, 1);
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+}
+
+.content .text {
+    color: aliceblue;
+    width: 40%;
+}
+
+.content .text h1 {
+    width: 20%;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.content .text p {
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.content .image {
+    width: 40%;
+}
+
+.content .image img {
+    width: 350px;
+}
+
+@media (min-width:950px) and (max-width: 1150px) {
+    .content .image img {
+        width: 250px;
+    }
+}
+
+@media (max-width: 950px) {
+    .content {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .content .image img {
+        width: 200px;
+    }
+
+    .content .image,
+    .content .text {
+        width: 80%;
+    }
+
+    nav {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .container {
+        height: 100%;
+    }
+
+    body::after {
+        clip-path: circle(50% at bottom);
+    }
 }
